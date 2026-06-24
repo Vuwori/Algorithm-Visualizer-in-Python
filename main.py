@@ -1,6 +1,6 @@
 
 #algorithm menu program
-choice = int(input("""
+menu_choice = int(input("""
 Choose which program you would like to use from the selected : 
 
 === ALGORITHM VISUALIZER ===
@@ -11,13 +11,35 @@ Choose which program you would like to use from the selected :
 4. Exit 
 """))
 
-if choice == 1:
+list_numbers = []
+
+if menu_choice == 1:
     print("Linear Search selected! ")
-elif choice == 2:
+
+    length = int(input(" How many numbers are in your array? "))
+    for x in range(length):
+        
+        linear_search = int(input(" Enter number " + str( x + 1 ) + " :"))
+
+        list_numbers.append(linear_search)
+
+    print(f"Your sequence is {list_numbers}.")
+        
+    target_value = int(input("What is the target value? "))
+
+    #looking for a specific value
+    for x in range(len(list_numbers)):
+        if list_numbers[x] == target_value:
+            print(f"Your target number is at index {x}.")
+
+
+elif menu_choice == 2:
     print("Binary Search selected! ")
-elif choice == 3:
+elif menu_choice == 3:
     print("Bubble Sort selected! ")
-elif choice == 4:
+elif menu_choice == 4:
     print("Goodbye! ")
 else:
     print("Your input is not one of the options...")
+
+#linear search
