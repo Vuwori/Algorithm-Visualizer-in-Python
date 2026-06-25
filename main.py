@@ -60,6 +60,19 @@ elif menu_choice == 2:
     if list_numbers[middle_index] == target_bin:
         print("You have found the target in the middle!")
 
+    #looking for if target is greater than middle index
+    while list_numbers[middle_index] < target_bin:
+        middle_index = middle_index + 1 
+        if list_numbers[middle_index] == target_bin:
+            print(f"The index is at {middle_index}!")
+        else: 
+            middle_index = middle_index + 1 
+            print(f"The index is at {middle_index}!")
+
+
+
+        
+
 
 
 
