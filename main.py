@@ -13,6 +13,8 @@ Choose which program you would like to use from the selected :
 
 list_numbers = []
 
+
+
 if menu_choice == 1:
     print("Linear Search selected! ")
 
@@ -35,6 +37,32 @@ if menu_choice == 1:
 
 elif menu_choice == 2:
     print("Binary Search selected! ")
+
+    length = int(input(" How many numbers are in your array? "))
+    for x in range(length):
+        
+        binary_search = int(input(" Enter number " + str( x + 1 ) + " :"))
+
+        list_numbers.append(binary_search)
+    print(f"Your sequence is {list_numbers}.")
+
+    middle_index = int(len(list_numbers)/2)
+
+    #check for middle index
+    #print(middle_index)
+
+    #check for value of middle index
+    #print(list_numbers[middle_index])
+
+    target_bin = int(input("What is your target value? "))
+
+    #looking for target value starting from middle
+    if list_numbers[middle_index] == target_bin:
+        print("You have found the target in the middle!")
+
+
+
+
 elif menu_choice == 3:
     print("Bubble Sort selected! ")
 elif menu_choice == 4:
