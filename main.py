@@ -47,6 +47,8 @@ elif menu_choice == 2:
     print(f"Your sequence is {list_numbers}.")
 
     middle_index = int(len(list_numbers)/2)
+    start_index = 0
+    end_index = int(len(list_numbers)-1)
 
     #check for middle index
     #print(middle_index)
@@ -61,18 +63,24 @@ elif menu_choice == 2:
         print("You have found the target in the middle!")
 
     #looking for if target is greater than middle index
-    while list_numbers[middle_index] < target_bin:
-        middle_index = middle_index + 1 
-        if list_numbers[middle_index] == target_bin:
-            print(f"The index is at {middle_index}!")
-        else: 
-            middle_index = middle_index + 1 
-            print(f"The index is at {middle_index}!")
+    while start_index <= end_index:
+        new_middle_index = int((start_index+end_index)/2)
 
-
-
+        #checks if smaller or greater
+        if target_bin > list_numbers[new_middle_index]:
+            start_index = new_middle_index + 1
+        else:
+            end_index = new_middle_index - 1
         
+        #loops through
+        if list_numbers[new_middle_index] == target_bin:
+            print(f"The index is at {new_middle_index}!")
+            break
+        elif target_bin > new_middle_index:
+            start_index = new_middle_index + 1
 
+        else: 
+            end_index = new_middle_index - 1
 
 
 
