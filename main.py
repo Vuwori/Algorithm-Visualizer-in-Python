@@ -128,11 +128,42 @@ elif menu_choice == 3:
     bubble_sort(list_numbers)
     print(f"\nSorted list: {list_numbers}")
             
-
-
-
-
 elif menu_choice == 4:
+    print("Selection Sort selected! ")
+
+    length = int(input(" How many numbers are in your array? "))
+
+    for x in range(length):
+        select_sort = int(input(" Enter number " + str( x + 1 ) + " :"))
+        list_numbers.append(select_sort)
+    print(f"Your sequence is {list_numbers}.")
+
+
+    def select_sort(numbers):
+        n = len(numbers)
+
+        #first loop assume x is min
+        for x in range(n - 1):
+            min_index = x
+
+            #if later position is smaller swap
+            for y in range(x + 1, n):
+                if numbers[y] < numbers[min_index]:
+                   min_index = y
+
+            #make list sorted
+            if min_index != x:
+                temp = numbers[x]
+                numbers[x] = numbers[min_index]
+                numbers[min_index] = temp
+    
+        return numbers
+    
+    select_sort(list_numbers)
+    print(f"\nSorted list: {list_numbers}")
+
+
+elif menu_choice == 5:
     print("Goodbye! ")
 else:
     print("Your input is not one of the options...")
