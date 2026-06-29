@@ -90,24 +90,43 @@ elif menu_choice == 3:
     #sorting the list
     def bubble_sort(numbers):
         n = len(numbers)
+        comparisons = 0
+        swaps = 0
+
 
         #multiple passes thru list
         for x in range(n):
                 
              #is it sorted?
             is_sorted = True
+
             #swap
             for y in range(0, n - x - 1):
+
+                #checks how many comparisons
+                comparisons += 1
+
                 if numbers[y] > numbers[y+1]:
                     numbers[y] , numbers[y+1] = numbers[y+1] , numbers[y]
+
+                    #how many swaps
+                    swaps += 1
                     is_sorted = False
+
+            print(f"Pass {x + 1}: {numbers}")
+
+
             if is_sorted:
-                print("List is sorted.")
-                break
+                print("List is sorted. No swaps are made.")
+                break      
+        print("\n===== Statistics =====")
+        print(f"Comparisons: {comparisons}")
+        print(f"Swaps: {swaps}")
+
         return numbers
-            
+    
     bubble_sort(list_numbers)
-    print(f"Your new sequence is {list_numbers}.")
+    print(f"\nSorted list: {list_numbers}")
             
 
 
