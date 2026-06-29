@@ -78,9 +78,42 @@ elif menu_choice == 2:
 
 elif menu_choice == 3:
     print("Bubble Sort selected! ")
+
+
+    length = int(input(" How many numbers are in your array? "))
+
+    for x in range(length):
+        bubble_sort = int(input(" Enter number " + str( x + 1 ) + " :"))
+        list_numbers.append(bubble_sort)
+    print(f"Your sequence is {list_numbers}.")
+
+    #sorting the list
+    def bubble_sort(numbers):
+        n = len(numbers)
+
+        #multiple passes thru list
+        for x in range(n):
+                
+             #is it sorted?
+            is_sorted = True
+            #swap
+            for y in range(0, n - x - 1):
+                if numbers[y] > numbers[y+1]:
+                    numbers[y] , numbers[y+1] = numbers[y+1] , numbers[y]
+                    is_sorted = False
+            if is_sorted:
+                print("List is sorted.")
+                break
+        return numbers
+            
+    bubble_sort(list_numbers)
+    print(f"Your new sequence is {list_numbers}.")
+            
+
+
+
+
 elif menu_choice == 4:
     print("Goodbye! ")
 else:
     print("Your input is not one of the options...")
-
-#linear search
