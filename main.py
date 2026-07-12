@@ -162,8 +162,54 @@ elif menu_choice == 4:
     select_sort(list_numbers)
     print(f"\nSorted list: {list_numbers}")
 
-
 elif menu_choice == 5:
+    print("Insertion sort selected. ")
+
+    length = int(input("How many numbers are in your array? "))
+
+    for x in range(length):
+        number = int(input("Enter number " + str(x + 1) + ": "))
+        list_numbers.append(number)
+
+    print(f"Original sequence: {list_numbers}")
+
+    #insertion
+    def insertion_sort(numbers):
+
+        #how many comparisons how many shifts
+        comparisons = 0
+        shifts = 0
+
+        for i in range(1, len(numbers)):
+
+            key = numbers[i]
+            j = i - 1
+
+            #check if number is greater than
+            while j >= 0 and numbers[j] > key:
+                comparisons += 1
+                numbers[j + 1] = numbers[j]
+                shifts += 1
+                j -= 1
+
+            if j >= 0:
+                comparisons += 1
+
+            numbers[j + 1] = key
+
+            print(f"Pass {i}: {numbers}")
+
+        print("\n===== Statistics =====")
+        print(f"Comparisons: {comparisons}")
+        print(f"Shifts: {shifts}")
+
+        return numbers
+
+    insertion_sort(list_numbers)
+
+    print(f"\nSorted list: {list_numbers}")
+
+elif menu_choice == 6:
     print("Goodbye! ")
 else:
     print("Your input is not one of the options...")
