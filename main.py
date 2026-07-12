@@ -8,7 +8,9 @@ Choose which program you would like to use from the selected :
 1. Linear Search
 2. Binary Search
 3. Bubble Sort
-4. Exit 
+4. Selection Sort
+5. Insertion Sort
+6. Exit 
 """))
 
 list_numbers = []
